@@ -1,0 +1,9 @@
+.nav__list {
+  padding: 0 20px;
+  gap: 25px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=nav.css.map */
