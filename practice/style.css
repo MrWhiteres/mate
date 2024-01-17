@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(10, 231px);
+    grid-column-gap: 30px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+}
+
+.person {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 231px;
+    z-index: 0;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.photo {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.person .photo {
+    transition: border-radius 1s ease-in-out;
+}
+
+.rank {
+    position: absolute;
+    bottom: calc(62% - 16px);
+    right: calc(16% - 16px);
+    background-color: #fff;
+    color: #8b0000;
+    font-size: 16px;
+    line-height: 18.4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+
+.details {
+    margin-top: 8px;
+}
+
+.name {
+    font-size: 20px;
+    line-height: 23px;
+    color: #2f4f4f;
+    text-align: center;
+}
+
+@media (min-width: 1000px) {
+    .people {
+        grid-template-columns: repeat(4, 200px);
+    }
+}
+
+.extra {
+    opacity: 0;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.person:hover {
+    position: relative;
+    right: 17%;
+    z-index: 1;
+    transform: scale(1.0);
+    width: 264px;
+    height: 344.4px;
+    background-color: #eee;
+}
+
+.person:hover .name {
+    font-size: 24px;
+    line-height: 23px;
+    text-align: justify-all;
+}
+
+.person:hover .rank {
+    bottom: calc(62% - 16px);
+    right: calc(16% - 16px);
+}
+
+.person:hover .photo {
+    border-radius: 30%;
+    margin-top: 3px;
+}
+
+.person:hover .extra {
+    opacity: 1;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 10.8px 0 19.2px 0;
+    text-align: center;
+}
+
+.sport::after {
+    content: ',';
+}
+
+.pay::before {
+    content: '$';
+}
